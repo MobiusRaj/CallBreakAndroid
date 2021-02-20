@@ -1,0 +1,4 @@
+include ':MKdimen'
+include ':CallBreakAndroid'
+include ':app'
+rootProject.name = "CallBreak Sdk"

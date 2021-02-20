@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#06185f"
+    tools:context=".game_activity.Activity_CallBreakList">
+
+    <!--<androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rummy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_56mk"
+        android:layout_marginTop="@dimen/_44mk"
+        android:fontFamily="@font/itcavantgardestdbold"
+        android:text="Call Break"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_28mk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icn_rummy"
+        android:layout_width="@dimen/_60mk"
+        android:layout_height="@dimen/_58mk"
+        android:background="@drawable/logo_777"
+        app:layout_constraintBottom_toBottomOf="@id/rummy"
+        app:layout_constraintStart_toEndOf="@id/rummy"
+        app:layout_constraintTop_toTopOf="@id/rummy" />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_3mk"
+        android:layout_marginStart="@dimen/_22mk"
+        android:layout_marginTop="@dimen/_15mk"
+        android:layout_marginEnd="@dimen/_28mk"
+        android:alpha="0.4"
+        android:background="@color/signup_yellowtxt"
+        app:layout_constraintEnd_toEndOf="@id/icn_rummy"
+        app:layout_constraintStart_toStartOf="@id/rummy"
+        app:layout_constraintTop_toBottomOf="@id/rummy" />-->
+
+    <ImageView
+        android:id="@+id/icn_close"
+        android:layout_width="@dimen/_47mk"
+        android:layout_height="@dimen/_47mk"
+        android:layout_marginTop="@dimen/_38mk"
+        android:layout_marginEnd="@dimen/_20mk"
+        android:src="@drawable/ic_icn_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/htp"
+        android:layout_width="@dimen/_55mk"
+        android:layout_height="@dimen/_55mk"
+        android:layout_marginTop="@dimen/_34mk"
+        android:layout_marginEnd="@dimen/_20mk"
+        android:alpha="0.5"
+        android:src="@drawable/htp_icn"
+        app:layout_constraintEnd_toStartOf="@+id/icn_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/btn_wallet"
+        android:layout_width="@dimen/_65mk"
+        android:layout_height="@dimen/_65mk"
+        android:layout_marginEnd="@dimen/_10mk"
+        android:background="@drawable/wallet_icon_blue"
+        app:layout_constraintBottom_toBottomOf="@id/wallet_amount"
+        app:layout_constraintRight_toLeftOf="@id/wallet_amount"
+        app:layout_constraintTop_toTopOf="@id/wallet_amount" />
+
+    <TextView
+        android:id="@+id/wallet_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="₹2456"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_36mk"
+        app:layout_constraintBottom_toTopOf="@id/header_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/whatsapp_refer_earn"
+        android:layout_width="@dimen/_62mk"
+        android:layout_height="@dimen/_62mk"
+        android:layout_marginTop="@dimen/_10mk"
+        android:background="@drawable/ic_wp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/txt_wp_earn"
+        app:layout_constraintStart_toEndOf="@+id/wallet_amount"
+        app:layout_constraintTop_toTopOf="@+id/wallet_amount"
+        app:layout_constraintBottom_toBottomOf="@+id/wallet_amount"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_wp_earn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_bold"
+        android:text="Share\nCallbreak"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_25mk"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_10mk"
+        app:layout_constraintBottom_toBottomOf="@+id/whatsapp_refer_earn"
+        app:layout_constraintStart_toEndOf="@+id/whatsapp_refer_earn"
+        app:layout_constraintEnd_toStartOf="@+id/htp"
+        app:layout_constraintTop_toTopOf="@+id/whatsapp_refer_earn" />
+
+    <ImageView
+        android:id="@+id/header_bg"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_88mk"
+        android:layout_marginStart="@dimen/_30mk"
+        android:layout_marginTop="@dimen/_122mk"
+        android:layout_marginEnd="@dimen/_30mk"
+        android:background="@color/cb_second_tbl_list_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_bet_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Bet Value"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_32mk"
+        app:layout_constraintBottom_toBottomOf="@id/header_bg"
+        app:layout_constraintEnd_toStartOf="@id/v"
+        app:layout_constraintStart_toStartOf="@id/header_bg"
+        app:layout_constraintTop_toTopOf="@id/header_bg" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="@dimen/_3mk"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_243mk"
+        android:layout_marginTop="@dimen/_15mk"
+        android:layout_marginBottom="@dimen/_9mk"
+        android:alpha="0.16"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/header_bg"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@id/header_bg"
+        app:layout_constraintTop_toTopOf="@id/header_bg" />
+
+    <TextView
+        android:id="@+id/txt_game_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Game Type"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_32mk"
+        app:layout_constraintBottom_toBottomOf="@id/header_bg"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        app:layout_constraintStart_toEndOf="@id/v"
+        app:layout_constraintTop_toTopOf="@id/header_bg" />
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="@dimen/_3mk"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_203mk"
+        android:layout_marginTop="@dimen/_15mk"
+        android:layout_marginEnd="@dimen/_470mk"
+        android:layout_marginBottom="@dimen/_9mk"
+        android:alpha="0.16"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/header_bg"
+        app:layout_constraintEnd_toEndOf="@id/header_bg"
+        app:layout_constraintStart_toEndOf="@id/v"
+        app:layout_constraintTop_toTopOf="@id/header_bg" />
+
+    <TextView
+        android:id="@+id/txt_open_tbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_65mk"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Open Table"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_32mk"
+        app:layout_constraintBottom_toBottomOf="@id/header_bg"
+        app:layout_constraintStart_toEndOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/header_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_notificatoion"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_60mk"
+        android:background="@drawable/addcash_bg"
+        android:backgroundTint="#E52326"
+        android:fontFamily="@font/barlow_medium"
+        android:gravity="center"
+        android:paddingStart="@dimen/_74mk"
+        android:paddingTop="@dimen/_10mk"
+        android:paddingEnd="@dimen/_104mk"
+        android:paddingBottom="@dimen/_18mk"
+        android:text="Cash Game in your region is not allowed. Please see our Terms and Conditions"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_24mk"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cls_notification"
+        android:layout_width="@dimen/_25mk"
+        android:layout_height="@dimen/_30mk"
+        android:layout_marginEnd="@dimen/_35mk"
+        android:background="@drawable/ic_close"
+        android:backgroundTint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/txt_notificatoion"
+        app:layout_constraintEnd_toEndOf="@id/txt_notificatoion"
+        app:layout_constraintTop_toTopOf="@id/txt_notificatoion" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/callbreak_table_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_10mk"
+        android:scrollbarThumbVertical="@drawable/recyclerview_scroll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/header_bg"
+        app:layout_constraintStart_toStartOf="@id/header_bg"
+        app:layout_constraintTop_toBottomOf="@id/header_bg"
+        tools:listitem="@layout/adapter_callbreak_table_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

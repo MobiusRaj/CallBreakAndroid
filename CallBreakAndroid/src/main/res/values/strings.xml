@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CallBreak Android</string>
+
+    <string name="check_connection">Check Connection</string>
+    <string name="reconnect">Reconnect</string>
+    <string name="Alert">Alert</string>
+    <string name="PleaseWait">Please wait..</string>
+    <string name="OK">OK</string>
+
+    <string name="htp1">1. Call Break is a strategic trick-based card game played by four players.\n The game is very similar to other trick-based game especially Spades.</string>
+    <string name="htp2">2. Standard single deck with 52 cards and no joker. Standard rules are followed for the rank of the cards in same suit : A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3, 2</string>
+    <string name="htp3">) are always the trump cards.</string>
+    <string name="htp4">1. Players are dealt with 13 cards each starting from the left of the dealer.\nFirst dealer will be chosen randomly and after that, the turn to deal rotates clockwise from first dealer.</string>
+    <string name="htp5">2. Each player bids a number of trick between 1 and 13 starting from the left of the dealer. Player have to achieve this goal in order to get positive score.</string>
+    <string name="htp6">3. Player can bid any number of tricks independent of previous bids or the total bids.</string>
+    <string name="htp7">1. The player on dealers left plays any card to the first trick. The rest of the players have to follow the same suit with high card if they can, otherwise they can play any card.</string>
+    <string name="htp8">2. A trick without Spades is won by the highest card played of the same suit as lead. if one or more Spades are used then trick is won by the highest Spade played.</string>
+    <string name="htp9">1. If a player take as many trick as its bid, they will receive points equal to their bid. Additional trick(overtricks) are counted 0.1 point each.</string>
+    <string name="htp10">2. If a player havent won tricks as their bid, whey will get as many negative points as they bid.</string>
+    <string name="htp11">3. There will be three round of play or three deal in a game. At the end of third round the winner will be decided, player with higher total points will win the game.</string>
+
+</resources>

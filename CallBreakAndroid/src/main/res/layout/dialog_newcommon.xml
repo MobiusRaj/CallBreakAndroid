@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/diaRootView"
+    android:layout_width="@dimen/_550mk"
+    android:layout_height="@dimen/_335mk"
+    android:layout_gravity="center">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/exit_popup_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cb_popup_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alertTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Alert"
+        android:textSize="@dimen/_34mk"
+        android:textColor="@color/signup_yellowtxt"
+        android:fontFamily="@font/barlow_semibold"
+        android:layout_marginTop="@dimen/_16mk"
+        app:layout_constraintTop_toTopOf="@id/exit_popup_bg"
+        app:layout_constraintStart_toStartOf="@id/exit_popup_bg"
+        app:layout_constraintEnd_toEndOf="@id/exit_popup_bg"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20mk"
+        android:fontFamily="@font/barlow_medium"
+        android:gravity="center"
+        android:text="Are you sure\nyou want to exit game ?"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30mk"
+        app:layout_constraintTop_toTopOf="@id/exit_popup_bg"
+        app:layout_constraintEnd_toEndOf="@id/exit_popup_bg"
+        app:layout_constraintStart_toStartOf="@id/exit_popup_bg"
+        app:layout_constraintBottom_toBottomOf="@id/exit_popup_bg" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button1"
+        android:layout_width="@dimen/_186mk"
+        android:layout_height="@dimen/_63mk"
+        android:background="@drawable/btn_yes"
+        android:fontFamily="@font/barlow_medium"
+        android:gravity="center"
+        android:text="YES"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_26mk"
+        android:visibility="visible"
+        android:layout_marginBottom="@dimen/_35mk"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/exit_popup_bg"
+        app:layout_constraintBottom_toBottomOf="@id/exit_popup_bg"
+        app:layout_constraintEnd_toStartOf="@id/button2"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="@dimen/_186mk"
+        android:layout_height="@dimen/_63mk"
+        android:background="@drawable/btn_no"
+        android:fontFamily="@font/barlow_medium"
+        android:gravity="center"
+        android:text="NO"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_26mk"
+        android:layout_marginStart="@dimen/_40mk"
+        android:layout_marginBottom="@dimen/_35mk"
+        app:layout_constraintStart_toEndOf="@id/button1"
+        app:layout_constraintEnd_toEndOf="@id/exit_popup_bg"
+        app:layout_constraintBottom_toBottomOf="@id/exit_popup_bg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_824mk"
+    android:layout_height="@dimen/_326mk"
+    android:layout_gravity="center"
+    android:layout_marginBottom="@dimen/_85mk"
+    android:background="@color/cb_popup_bg">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75mk"
+        android:background="#031767"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:text="Select Your Bid"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_42mk"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/bid1"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintBottom_toTopOf="@id/bid8"
+        app:layout_constraintEnd_toStartOf="@id/bid2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/bid2"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid3"
+        app:layout_constraintStart_toEndOf="@id/bid1"
+        app:layout_constraintTop_toTopOf="@id/bid1" />
+
+    <Button
+        android:id="@+id/bid3"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid4"
+        app:layout_constraintStart_toEndOf="@id/bid2"
+        app:layout_constraintTop_toTopOf="@id/bid1" />
+
+    <Button
+        android:id="@+id/bid4"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid5"
+        app:layout_constraintStart_toEndOf="@id/bid3"
+        app:layout_constraintTop_toTopOf="@id/bid1" />
+
+    <Button
+        android:id="@+id/bid5"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid6"
+        app:layout_constraintStart_toEndOf="@id/bid4"
+        app:layout_constraintTop_toTopOf="@id/bid1" />
+
+
+    <Button
+        android:id="@+id/bid6"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid7"
+        app:layout_constraintStart_toEndOf="@id/bid5"
+        app:layout_constraintTop_toTopOf="@id/bid1" />
+
+
+    <Button
+        android:id="@+id/bid7"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="7"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bid6"
+        app:layout_constraintTop_toTopOf="@id/bid1" />
+
+
+    <Button
+        android:id="@+id/bid8"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginTop="@dimen/_30mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="8"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bid9"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bid1" />
+
+    <Button
+        android:id="@+id/bid9"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="9"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid10"
+        app:layout_constraintStart_toEndOf="@id/bid8"
+        app:layout_constraintTop_toTopOf="@id/bid8" />
+
+    <Button
+        android:id="@+id/bid10"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid11"
+        app:layout_constraintStart_toEndOf="@id/bid9"
+        app:layout_constraintTop_toTopOf="@id/bid8" />
+
+    <Button
+        android:id="@+id/bid11"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="11"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid12"
+        app:layout_constraintStart_toEndOf="@id/bid10"
+        app:layout_constraintTop_toTopOf="@id/bid8" />
+
+    <Button
+        android:id="@+id/bid12"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="12"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toStartOf="@id/bid13"
+        app:layout_constraintStart_toEndOf="@id/bid11"
+        app:layout_constraintTop_toTopOf="@id/bid8" />
+
+    <Button
+        android:id="@+id/bid13"
+        android:layout_width="@dimen/_85mk"
+        android:layout_height="@dimen/_85mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:background="@drawable/bid_btn"
+        android:fontFamily="@font/barlow_semibold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_11mk"
+        android:text="13"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_35mk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bid12"
+        app:layout_constraintTop_toTopOf="@id/bid8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image">
+
+    <LinearLayout
+        android:id="@+id/linMainBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Dialog Title"
+            android:textColor="#ecac58"
+            android:textSize="@dimen/_34mk"
+            android:fontFamily="@font/barlow_bold"/>
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:background="@drawable/line3" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5mk"
+            android:gravity="center"
+            android:text="Connection Lost ! cant connect to internet Try again Later"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_34mk"
+            android:fontFamily="@font/barlow_semibold"/>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="@dimen/_150mk"
+                android:layout_height="@dimen/_70mk"
+                android:background="@drawable/btn_yes"
+                android:text="OK"
+                android:textSize="@dimen/_28mk"
+                android:textColor="@color/black"
+                android:fontFamily="@font/barlow_semibold" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="@dimen/_150mk"
+                android:layout_height="@dimen/_70mk"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn_no"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="CANCEL"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_28mk"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/no_internet_txt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_95mk"
+        android:background="@color/black"
+        android:layout_gravity="bottom"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="No Internet. Connect to Wi-Fi or mobile network."
+            android:textSize="@dimen/_30mk"
+            android:fontFamily="@font/barlow_bold"/>
+
+    </LinearLayout>
+</FrameLayout>

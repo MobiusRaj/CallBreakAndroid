@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.mobius.callbreakandroid.game_activity.Activity_CallBreakScoreBoard.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transperant">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_156mk"
+            android:layout_marginEnd="@dimen/_156mk"
+            android:background="#FF09248E"
+            app:layout_constraintBottom_toBottomOf="@id/round_total_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/header_txt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80mk"
+            android:background="@color/cb_tbl_list_bg"
+            android:fontFamily="@font/barlow_semibold"
+            android:gravity="center"
+            android:text="Score Board"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_40mk"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/user_img_container"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icn_close"
+            android:layout_width="@dimen/_47mk"
+            android:layout_height="@dimen/_47mk"
+            android:layout_marginEnd="@dimen/_15mk"
+            android:onClick="@{handlers::closeButtonClick}"
+            android:src="@drawable/ic_icn_close"
+            app:layout_constraintBottom_toBottomOf="@id/header_txt"
+            app:layout_constraintEnd_toEndOf="@id/header_txt"
+            app:layout_constraintTop_toTopOf="@id/header_txt"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_img_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100mk"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/header_txt"
+            app:layout_constraintBottom_toTopOf="@+id/round1_container"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/round_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_50mk"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Round"
+            android:textColor="@color/yellow_text"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toTopOf="@id/round1_container"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@+id/header_txt" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user1_winner"
+            android:layout_width="@dimen/_120mk"
+            android:layout_height="@dimen/_120mk"
+            android:background="@drawable/cb_winner_bg"
+            app:layout_constraintTop_toTopOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@+id/user1_img"
+            app:layout_constraintBottom_toBottomOf="@+id/user1_img"
+            app:layout_constraintEnd_toEndOf="@+id/user1_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user1_img"
+            android:layout_width="@dimen/_70mk"
+            android:layout_height="@dimen/_70mk"
+            android:background="@drawable/cb_user_img"
+            app:layout_constraintBottom_toTopOf="@+id/user1_name"
+            app:layout_constraintEnd_toStartOf="@+id/user2_img"
+            app:layout_constraintStart_toEndOf="@+id/round_txt"
+            app:layout_constraintTop_toBottomOf="@id/header_txt"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user1_crown"
+            android:layout_width="@dimen/_50mk"
+            android:layout_height="@dimen/_30mk"
+            android:background="@drawable/cb_crown"
+            app:layout_constraintTop_toTopOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintEnd_toEndOf="@+id/user1_img"
+            app:layout_constraintBottom_toTopOf="@id/user1_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user1_winner_tag"
+            android:layout_width="@dimen/_100mk"
+            android:layout_height="@dimen/_28mk"
+            android:background="@drawable/cb_winner_tag"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintEnd_toEndOf="@+id/user1_img"
+            app:layout_constraintBottom_toBottomOf="@id/user1_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Round"
+            android:textColor="@color/yellow_text"
+            android:textSize="@dimen/_20mk"
+            app:layout_constraintBottom_toTopOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@+id/user1_img"
+            app:layout_constraintStart_toStartOf="@+id/user1_img"
+            app:layout_constraintTop_toBottomOf="@+id/user1_img" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user2_winner"
+            android:layout_width="@dimen/_120mk"
+            android:layout_height="@dimen/_120mk"
+            android:background="@drawable/cb_winner_bg"
+            app:layout_constraintTop_toTopOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@+id/user2_img"
+            app:layout_constraintBottom_toBottomOf="@+id/user2_img"
+            app:layout_constraintEnd_toEndOf="@+id/user2_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user2_img"
+            android:layout_width="@dimen/_70mk"
+            android:layout_height="@dimen/_70mk"
+            android:background="@drawable/cb_user_img"
+            app:layout_constraintBottom_toTopOf="@+id/user2_name"
+            app:layout_constraintEnd_toStartOf="@+id/user3_img"
+            app:layout_constraintStart_toEndOf="@+id/user1_img"
+            app:layout_constraintTop_toBottomOf="@id/header_txt"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user2_crown"
+            android:layout_width="@dimen/_50mk"
+            android:layout_height="@dimen/_30mk"
+            android:background="@drawable/cb_crown"
+            app:layout_constraintTop_toTopOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintEnd_toEndOf="@+id/user2_img"
+            app:layout_constraintBottom_toTopOf="@id/user2_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user2_winner_tag"
+            android:layout_width="@dimen/_100mk"
+            android:layout_height="@dimen/_28mk"
+            android:background="@drawable/cb_winner_tag"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintEnd_toEndOf="@+id/user2_img"
+            app:layout_constraintBottom_toBottomOf="@id/user2_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Round"
+            android:textColor="@color/yellow_text"
+            android:textSize="@dimen/_20mk"
+            app:layout_constraintBottom_toTopOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@+id/user2_img"
+            app:layout_constraintStart_toStartOf="@+id/user2_img"
+            app:layout_constraintTop_toBottomOf="@+id/user2_img" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user3_winner"
+            android:layout_width="@dimen/_120mk"
+            android:layout_height="@dimen/_120mk"
+            android:background="@drawable/cb_winner_bg"
+            app:layout_constraintTop_toTopOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@+id/user3_img"
+            app:layout_constraintBottom_toBottomOf="@+id/user3_img"
+            app:layout_constraintEnd_toEndOf="@+id/user3_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user3_img"
+            android:layout_width="@dimen/_70mk"
+            android:layout_height="@dimen/_70mk"
+            android:background="@drawable/cb_user_img"
+            app:layout_constraintBottom_toTopOf="@+id/user3_name"
+            app:layout_constraintEnd_toStartOf="@+id/user4_img"
+            app:layout_constraintStart_toEndOf="@+id/user2_img"
+            app:layout_constraintTop_toBottomOf="@id/header_txt"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user3_crown"
+            android:layout_width="@dimen/_50mk"
+            android:layout_height="@dimen/_30mk"
+            android:background="@drawable/cb_crown"
+            app:layout_constraintTop_toTopOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintEnd_toEndOf="@+id/user3_img"
+            app:layout_constraintBottom_toTopOf="@id/user3_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user3_winner_tag"
+            android:layout_width="@dimen/_100mk"
+            android:layout_height="@dimen/_28mk"
+            android:background="@drawable/cb_winner_tag"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintEnd_toEndOf="@+id/user3_img"
+            app:layout_constraintBottom_toBottomOf="@id/user3_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Round"
+            android:textColor="@color/yellow_text"
+            android:textSize="@dimen/_20mk"
+            app:layout_constraintBottom_toTopOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@+id/user3_img"
+            app:layout_constraintStart_toStartOf="@+id/user3_img"
+            app:layout_constraintTop_toBottomOf="@+id/user3_img" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user4_winner"
+            android:layout_width="@dimen/_120mk"
+            android:layout_height="@dimen/_120mk"
+            android:background="@drawable/cb_winner_bg"
+            app:layout_constraintTop_toTopOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@+id/user4_img"
+            app:layout_constraintBottom_toBottomOf="@+id/user4_img"
+            app:layout_constraintEnd_toEndOf="@+id/user4_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user4_img"
+            android:layout_width="@dimen/_70mk"
+            android:layout_height="@dimen/_70mk"
+            android:background="@drawable/cb_user_img"
+            app:layout_constraintBottom_toTopOf="@+id/user4_name"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toEndOf="@+id/user3_img"
+            app:layout_constraintTop_toBottomOf="@id/header_txt"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user4_crown"
+            android:layout_width="@dimen/_50mk"
+            android:layout_height="@dimen/_30mk"
+            android:background="@drawable/cb_crown"
+            app:layout_constraintTop_toTopOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintEnd_toEndOf="@+id/user4_img"
+            app:layout_constraintBottom_toTopOf="@id/user4_img"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user4_winner_tag"
+            android:layout_width="@dimen/_100mk"
+            android:layout_height="@dimen/_28mk"
+            android:background="@drawable/cb_winner_tag"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintEnd_toEndOf="@+id/user4_img"
+            app:layout_constraintBottom_toBottomOf="@id/user4_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Round"
+            android:textColor="@color/yellow_text"
+            android:textSize="@dimen/_20mk"
+            app:layout_constraintBottom_toTopOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@+id/user4_img"
+            app:layout_constraintStart_toStartOf="@+id/user4_img"
+            app:layout_constraintTop_toBottomOf="@+id/user4_img" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/round1_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60mk"
+            android:background="@color/cb_tbl_list_bg"
+            app:layout_constraintBottom_toTopOf="@+id/round2_container"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/user_img_container"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@id/round_txt"
+            app:layout_constraintStart_toStartOf="@id/round_txt"
+            app:layout_constraintTop_toTopOf="@id/round1_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_round1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintTop_toTopOf="@id/round1_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_round1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintTop_toTopOf="@id/round1_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_round1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintTop_toTopOf="@id/round1_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_round1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round1_container"
+            app:layout_constraintEnd_toEndOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintTop_toTopOf="@id/round1_container" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/round2_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60mk"
+            app:layout_constraintBottom_toTopOf="@+id/round3_container"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/round1_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round2_container"
+            app:layout_constraintEnd_toEndOf="@id/round_txt"
+            app:layout_constraintStart_toStartOf="@id/round_txt"
+            app:layout_constraintTop_toTopOf="@id/round2_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_round2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round2_container"
+            app:layout_constraintEnd_toEndOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintTop_toTopOf="@id/round2_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_round2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round2_container"
+            app:layout_constraintEnd_toEndOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintTop_toTopOf="@id/round2_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_round2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round2_container"
+            app:layout_constraintEnd_toEndOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintTop_toTopOf="@id/round2_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_round2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round2_container"
+            app:layout_constraintEnd_toEndOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintTop_toTopOf="@id/round2_container" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/round3_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60mk"
+            android:background="@color/cb_tbl_list_bg"
+            app:layout_constraintBottom_toTopOf="@+id/round4_container"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/round2_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round3_container"
+            app:layout_constraintEnd_toEndOf="@id/round_txt"
+            app:layout_constraintStart_toStartOf="@id/round_txt"
+            app:layout_constraintTop_toTopOf="@id/round3_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_round3_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round3_container"
+            app:layout_constraintEnd_toEndOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintTop_toTopOf="@id/round3_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_round3_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round3_container"
+            app:layout_constraintEnd_toEndOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintTop_toTopOf="@id/round3_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_round3_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round3_container"
+            app:layout_constraintEnd_toEndOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintTop_toTopOf="@id/round3_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_round3_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round3_container"
+            app:layout_constraintEnd_toEndOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintTop_toTopOf="@id/round3_container" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/round4_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60mk"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/round5_container"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/round3_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round4_container"
+            app:layout_constraintEnd_toEndOf="@id/round_txt"
+            app:layout_constraintStart_toStartOf="@id/round_txt"
+            app:layout_constraintTop_toTopOf="@id/round4_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_round4_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round4_container"
+            app:layout_constraintEnd_toEndOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintTop_toTopOf="@id/round4_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_round4_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round4_container"
+            app:layout_constraintEnd_toEndOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintTop_toTopOf="@id/round4_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_round4_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round4_container"
+            app:layout_constraintEnd_toEndOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintTop_toTopOf="@id/round4_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_round4_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round4_container"
+            app:layout_constraintEnd_toEndOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintTop_toTopOf="@id/round4_container" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/round5_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60mk"
+            android:background="@color/cb_tbl_list_bg"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/round_total_container"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/round4_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round5_container"
+            app:layout_constraintEnd_toEndOf="@id/round_txt"
+            app:layout_constraintStart_toStartOf="@id/round_txt"
+            app:layout_constraintTop_toTopOf="@id/round5_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_round5_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round5_container"
+            app:layout_constraintEnd_toEndOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintTop_toTopOf="@id/round5_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_round5_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round5_container"
+            app:layout_constraintEnd_toEndOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintTop_toTopOf="@id/round5_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_round5_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round5_container"
+            app:layout_constraintEnd_toEndOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintTop_toTopOf="@id/round5_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_round5_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@id/round5_container"
+            app:layout_constraintEnd_toEndOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintTop_toTopOf="@id/round5_container" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/round_total_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100mk"
+            app:layout_constraintEnd_toEndOf="@+id/main_bg"
+            app:layout_constraintStart_toStartOf="@+id/main_bg"
+            app:layout_constraintTop_toBottomOf="@id/round5_container"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Total"
+            android:textColor="@color/yellow_text"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@+id/round_total_container"
+            app:layout_constraintEnd_toEndOf="@id/round_txt"
+            app:layout_constraintStart_toStartOf="@id/round_txt"
+            app:layout_constraintTop_toTopOf="@id/round_total_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user1_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@+id/round_total_container"
+            app:layout_constraintEnd_toEndOf="@id/user1_img"
+            app:layout_constraintStart_toStartOf="@id/user1_img"
+            app:layout_constraintTop_toTopOf="@id/round_total_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user2_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@+id/round_total_container"
+            app:layout_constraintEnd_toEndOf="@id/user2_img"
+            app:layout_constraintStart_toStartOf="@id/user2_img"
+            app:layout_constraintTop_toTopOf="@id/round_total_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user3_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@+id/round_total_container"
+            app:layout_constraintEnd_toEndOf="@id/user3_img"
+            app:layout_constraintStart_toStartOf="@id/user3_img"
+            app:layout_constraintTop_toTopOf="@id/round_total_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user4_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35mk"
+            app:layout_constraintBottom_toBottomOf="@+id/round_total_container"
+            app:layout_constraintEnd_toEndOf="@id/user4_img"
+            app:layout_constraintStart_toStartOf="@id/user4_img"
+            app:layout_constraintTop_toTopOf="@id/round_total_container" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

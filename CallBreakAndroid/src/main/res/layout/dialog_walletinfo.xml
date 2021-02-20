@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/close_infopopup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_bg"
+        android:layout_width="@dimen/_325mk"
+        android:layout_height="@dimen/_220mk"
+        android:layout_marginTop="@dimen/_76mk"
+        android:layout_marginStart="@dimen/_78mk"
+        android:background="@drawable/wallet_info_poup_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_Deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deposit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_medium"
+        android:layout_marginStart="@dimen/_26mk"
+        android:layout_marginTop="@dimen/_7mk"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toTopOf="@+id/main_bg"
+        app:layout_constraintBottom_toTopOf="@+id/rj1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_24mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_semibold"
+        android:layout_marginEnd="@dimen/_28mk"
+        android:layout_marginTop="@dimen/_7mk"
+        app:layout_constraintTop_toTopOf="@+id/main_bg"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintBottom_toTopOf="@+id/rj1"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_3mk"
+        android:layout_marginStart="@dimen/_20mk"
+        android:layout_marginTop="@dimen/_22mk"
+        android:layout_marginEnd="@dimen/_20mk"
+        android:background="@drawable/db_ver_line"
+        app:layout_constraintBottom_toTopOf="@+id/rj2"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toTopOf="@+id/main_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_InstantCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instant Bonus"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_medium"
+        android:layout_marginStart="@dimen/_26mk"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj1"
+        app:layout_constraintBottom_toTopOf="@+id/rj2"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/InstantCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_24mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_semibold"
+        android:layout_marginEnd="@dimen/_28mk"
+        android:layout_marginTop="@dimen/_5mk"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj1"
+        app:layout_constraintBottom_toTopOf="@+id/rj2"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_3mk"
+        android:layout_marginStart="@dimen/_20mk"
+        android:layout_marginTop="@dimen/_15mk"
+        android:layout_marginEnd="@dimen/_20mk"
+        android:background="@drawable/db_ver_line"
+        app:layout_constraintBottom_toTopOf="@+id/rj3"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_Winnings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Winnings"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_medium"
+        android:layout_marginStart="@dimen/_26mk"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj2"
+        app:layout_constraintBottom_toTopOf="@+id/rj3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Winnings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_24mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_semibold"
+        android:layout_marginEnd="@dimen/_28mk"
+        android:layout_marginTop="@dimen/_5mk"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj2"
+        app:layout_constraintBottom_toTopOf="@+id/rj3"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_3mk"
+        android:layout_marginStart="@dimen/_20mk"
+        android:layout_marginTop="@dimen/_15mk"
+        android:layout_marginEnd="@dimen/_20mk"
+        android:background="@drawable/db_ver_line"
+        android:layout_marginBottom="@dimen/_25mk"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_ReleasedBonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Released Bonus"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_medium"
+        android:layout_marginStart="@dimen/_26mk"
+        android:layout_marginBottom="@dimen/_20mk"
+        app:layout_constraintStart_toStartOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj3"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ReleasedBonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_24mk"
+        android:gravity="center"
+        android:fontFamily="@font/barlow_semibold"
+        android:layout_marginEnd="@dimen/_28mk"
+        android:layout_marginTop="@dimen/_5mk"
+        android:layout_marginBottom="@dimen/_18mk"
+        app:layout_constraintEnd_toEndOf="@+id/main_bg"
+        app:layout_constraintTop_toBottomOf="@+id/rj3"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

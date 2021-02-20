@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/diaRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_bg"
+        android:layout_width="@dimen/_420mk"
+        android:layout_height="@dimen/_585mk"
+        android:layout_marginTop="@dimen/_72mk"
+        android:clickable="true"
+        android:background="@drawable/bg_info_popup"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:focusable="true" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35mk"
+        android:fontFamily="@font/barlow_semibold"
+        android:text="Game Information"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_26mk"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toTopOf="@id/main_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close_infopopup"
+        android:layout_width="@dimen/_35mk"
+        android:layout_height="@dimen/_35mk"
+        android:layout_marginTop="@dimen/_35mk"
+        android:layout_marginEnd="@dimen/_30mk"
+        android:background="@drawable/ic_icn_close"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintTop_toTopOf="@id/main_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/id_bg"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_57mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:layout_marginTop="@dimen/_20mk"
+        android:layout_marginEnd="@dimen/_35mk"
+        android:background="@drawable/bg_gameid"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_gameid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Game ID"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/game_id"
+        app:layout_constraintStart_toStartOf="@id/id_bg"
+        app:layout_constraintTop_toTopOf="@id/id_bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/game_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="#00000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        app:layout_constraintBottom_toBottomOf="@id/id_bg"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"
+        app:layout_constraintTop_toBottomOf="@id/txt_gameid" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj1"
+        android:layout_width="@dimen/_2mk"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6mk"
+        android:layout_marginBottom="@dimen/_6mk"
+        android:background="@drawable/info_line_hori"
+        app:layout_constraintBottom_toBottomOf="@id/id_bg"
+        app:layout_constraintEnd_toEndOf="@id/id_bg"
+        app:layout_constraintStart_toStartOf="@id/id_bg"
+        app:layout_constraintTop_toTopOf="@id/id_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_gametype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Game Type"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/info_game_type"
+        app:layout_constraintStart_toEndOf="@id/rj1"
+        app:layout_constraintTop_toTopOf="@id/id_bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_game_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Points Rummy - 2P"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19mk"
+        android:layout_marginStart="@dimen/_18mk"
+        app:layout_constraintBottom_toBottomOf="@id/id_bg"
+        app:layout_constraintStart_toEndOf="@id/rj1"
+        app:layout_constraintTop_toBottomOf="@id/txt_gametype" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_point_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Point Value"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/point_value"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"
+        app:layout_constraintTop_toBottomOf="@id/id_bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/point_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="0.1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        app:layout_constraintBottom_toBottomOf="@id/j1"
+        app:layout_constraintStart_toStartOf="@id/txt_point_value"
+        app:layout_constraintTop_toBottomOf="@id/txt_point_value" />
+
+    <View
+        android:id="@+id/j1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1mk"
+        android:layout_marginStart="@dimen/_27mk"
+        android:layout_marginEnd="@dimen/_37mk"
+        android:alpha="0.4"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/j2"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toBottomOf="@id/id_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_initial_drop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Initial Drop"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/initial_drop"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"
+        app:layout_constraintTop_toTopOf="@id/j1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/initial_drop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="20 Points"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/j2"
+        app:layout_constraintStart_toStartOf="@id/txt_initial_drop"
+        app:layout_constraintTop_toBottomOf="@id/txt_initial_drop" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj2"
+        android:layout_width="@dimen/_2mk"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6mk"
+        android:layout_marginBottom="@dimen/_6mk"
+        android:visibility="visible"
+        android:background="@drawable/info_line_hori"
+        app:layout_constraintBottom_toBottomOf="@id/j2"
+        app:layout_constraintEnd_toEndOf="@id/id_bg"
+        app:layout_constraintStart_toStartOf="@id/id_bg"
+        app:layout_constraintTop_toTopOf="@id/j1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_middle_drop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Middle drop"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/middle_drop"
+        app:layout_constraintStart_toEndOf="@id/rj2"
+        app:layout_constraintTop_toTopOf="@id/j1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/middle_drop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="40 Points"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/j2"
+        app:layout_constraintStart_toStartOf="@id/txt_middle_drop"
+        app:layout_constraintTop_toBottomOf="@id/txt_middle_drop" />
+
+    <View
+        android:id="@+id/j2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1mk"
+        android:layout_marginStart="@dimen/_27mk"
+        android:layout_marginEnd="@dimen/_37mk"
+        android:alpha="0.4"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/j3"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toBottomOf="@id/j1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_trump_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trump Card : "
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_25mk"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/j2"
+        app:layout_constraintBottom_toBottomOf="@id/j3"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/spade_img"
+        android:layout_width="@dimen/_40mk"
+        android:layout_height="@dimen/_40mk"
+        android:background="@drawable/spade_icons"
+        android:layout_marginStart="@dimen/_20mk"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/txt_trump_card"
+        app:layout_constraintTop_toTopOf="@id/txt_trump_card"
+        app:layout_constraintBottom_toBottomOf="@id/txt_trump_card"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_wrong_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Wrong Show"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/wrong_show"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"
+        app:layout_constraintTop_toTopOf="@id/j2"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/wrong_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="80 Points"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/j3"
+        app:layout_constraintStart_toStartOf="@id/txt_wrong_show"
+        app:layout_constraintTop_toBottomOf="@id/txt_wrong_show" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj3"
+        android:layout_width="@dimen/_2mk"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6mk"
+        android:layout_marginBottom="@dimen/_6mk"
+        android:visibility="visible"
+        android:background="@drawable/info_line_hori"
+        app:layout_constraintBottom_toBottomOf="@id/j3"
+        app:layout_constraintEnd_toEndOf="@id/id_bg"
+        app:layout_constraintStart_toStartOf="@id/id_bg"
+        app:layout_constraintTop_toTopOf="@id/j2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_leave_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Leave Table"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/leave_table"
+        app:layout_constraintStart_toEndOf="@id/rj3"
+        app:layout_constraintTop_toTopOf="@id/j2"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/leave_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="40 Points"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19mk"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/j3"
+        app:layout_constraintStart_toStartOf="@id/txt_leave_table"
+        app:layout_constraintTop_toBottomOf="@id/txt_leave_table" />
+
+    <View
+        android:id="@+id/j3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1mk"
+        android:layout_marginStart="@dimen/_27mk"
+        android:layout_marginEnd="@dimen/_37mk"
+        android:alpha="0.4"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/j4"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toBottomOf="@id/j2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_disconnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Disconnection"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/info_disconnection"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"
+        app:layout_constraintTop_toTopOf="@id/j3"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_disconnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="3 Turns AutoPlay and Middledrop"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        app:layout_constraintBottom_toBottomOf="@id/j4"
+        app:layout_constraintStart_toStartOf="@id/txt_disconnection"
+        app:layout_constraintTop_toBottomOf="@id/txt_disconnection" />
+
+    <View
+        android:id="@+id/j4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1mk"
+        android:layout_marginStart="@dimen/_27mk"
+        android:layout_marginEnd="@dimen/_37mk"
+        android:alpha="0.4"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/j5"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toBottomOf="@id/j3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_cards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Cards"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/cards"
+        app:layout_constraintStart_toStartOf="@id/txt_gameid"
+        app:layout_constraintTop_toTopOf="@id/j4"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="2 Decks"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19mk"
+        app:layout_constraintBottom_toBottomOf="@id/j5"
+        app:layout_constraintStart_toStartOf="@id/txt_cards"
+        app:layout_constraintTop_toBottomOf="@id/txt_cards" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rj5"
+        android:layout_width="@dimen/_2mk"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6mk"
+        android:layout_marginBottom="@dimen/_6mk"
+        android:background="@drawable/info_line_hori"
+        app:layout_constraintBottom_toBottomOf="@id/j5"
+        app:layout_constraintEnd_toEndOf="@id/id_bg"
+        app:layout_constraintStart_toStartOf="@id/id_bg"
+        app:layout_constraintTop_toTopOf="@id/j4" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_joker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Paper/Face Joker"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/joker_deck"
+        app:layout_constraintStart_toEndOf="@id/rj5"
+        app:layout_constraintTop_toTopOf="@id/j4"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/joker_deck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="1 Per Decks"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19mk"
+        app:layout_constraintBottom_toBottomOf="@id/j5"
+        app:layout_constraintStart_toStartOf="@id/txt_joker"
+        app:layout_constraintTop_toBottomOf="@id/txt_joker" />
+
+    <View
+        android:id="@+id/j5"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1mk"
+        android:layout_marginStart="@dimen/_27mk"
+        android:layout_marginEnd="@dimen/_37mk"
+        android:alpha="0.4"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/time_bg"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg"
+        app:layout_constraintTop_toBottomOf="@id/j4" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/time_info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20mk"
+        android:layout_marginBottom="@dimen/_10mk"
+        android:fontFamily="@font/barlow_semibold"
+        android:text="Time Information :"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_21mk"
+        app:layout_constraintBottom_toTopOf="@id/time_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/time_bg"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_57mk"
+        android:layout_marginStart="@dimen/_25mk"
+        android:layout_marginEnd="@dimen/_35mk"
+        android:layout_marginBottom="@dimen/_35mk"
+        android:background="@drawable/bg_timeinfo"
+        app:layout_constraintBottom_toBottomOf="@id/main_bg"
+        app:layout_constraintEnd_toEndOf="@id/main_bg"
+        app:layout_constraintStart_toStartOf="@id/main_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_turntimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Turn Timer"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/turn_timer"
+        app:layout_constraintStart_toStartOf="@id/time_bg"
+        app:layout_constraintTop_toTopOf="@id/time_bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/turn_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="30 seconds"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20mk"
+        app:layout_constraintBottom_toBottomOf="@id/time_bg"
+        app:layout_constraintStart_toStartOf="@id/txt_turntimer"
+        app:layout_constraintTop_toBottomOf="@id/txt_turntimer" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_2mk"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6mk"
+        android:layout_marginBottom="@dimen/_6mk"
+        android:background="@drawable/info_line_hori"
+        app:layout_constraintBottom_toBottomOf="@id/time_bg"
+        app:layout_constraintEnd_toEndOf="@id/time_bg"
+        app:layout_constraintStart_toStartOf="@id/time_bg"
+        app:layout_constraintTop_toTopOf="@id/time_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_showtimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mk"
+        android:fontFamily="@font/barlow_medium"
+        android:text="Show Time"
+        android:textColor="@color/signup_yellowtxt"
+        android:textSize="@dimen/_15mk"
+        app:layout_constraintBottom_toTopOf="@id/show_timer"
+        app:layout_constraintStart_toEndOf="@id/rj2"
+        app:layout_constraintTop_toTopOf="@id/time_bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/show_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barlow_medium"
+        android:text="30 seconds"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19mk"
+        app:layout_constraintBottom_toBottomOf="@id/time_bg"
+        app:layout_constraintStart_toStartOf="@id/txt_showtimer"
+        app:layout_constraintTop_toBottomOf="@id/txt_showtimer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
