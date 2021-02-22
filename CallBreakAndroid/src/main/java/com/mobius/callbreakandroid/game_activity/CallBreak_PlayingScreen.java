@@ -383,7 +383,7 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
                 JSONObject jObject1 = jObject.getJSONObject(Parameters.data);
                 binding.tableId.setText(jObject1.getString("gameId"));
 
-                if (c.isJoinedPreviousTable && !c.isPointsRummy) {
+                if (c.isJoinedPreviousTable) {
                     if (binding.gameRound.getVisibility() == View.GONE) {
                         binding.gameRound.setVisibility(View.VISIBLE);
                     }
@@ -393,7 +393,6 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
                 }
 
                 JSONArray players = jObject1.getJSONArray(Parameters.PlayersInfo);
-                c.isTwoPlayerTableOrNot = players.length() <= 2;
                 Log.e("TABLE_LENGTH", " size → " + players.length());
                 c.Bootval = jObject1.getInt(Parameters.BootValue);
 
@@ -707,7 +706,7 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
                     }
 
 
-                    if (jObject.getJSONObject(Parameters.data).has(Parameters.TurnOfSeat) && !c.isQuickMode) {
+                    if (jObject.getJSONObject(Parameters.data).has(Parameters.TurnOfSeat)) {
                         int timerOfUser = jObject.getJSONObject(Parameters.data).getInt(Parameters.Timer);
 
                         if (timerOfUser > 0) {
@@ -819,12 +818,7 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
                     }
 
                     if (card_BottomUser.size() < 13 || card_BottomUser.size() > 14) {
-                        if (c.isQuickMode) {
-                            card_BottomUser = tempArray;
-                            Collections.shuffle(card_BottomUser);
-                        } else {
-                            card_BottomUser = new ArrayList<>(SortMyCardbyColor(tempArray));
-                        }
+                        card_BottomUser = new ArrayList<>(SortMyCardbyColor(tempArray));
                     }
 
                     Logger.print(TAG, "QQQQQQQQQQQQQQQQQQQQQQQQQQQ => " + " Card Bottom User => " + card_BottomUser.size() + " " + card_BottomUser.toString());
@@ -836,11 +830,7 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
                         Item_Card card = getItemCard(Card);
                         card_BottomUser.add(card);
                     }
-                    if (c.isQuickMode) {
-                        Collections.shuffle(card_BottomUser);
-                    } else {
-                        card_BottomUser = new ArrayList<>(SortMyCardbyColor(card_BottomUser));
-                    }
+                    card_BottomUser = new ArrayList<>(SortMyCardbyColor(card_BottomUser));
                 }
                 reDrawUserCards(card_BottomUser);
             }
@@ -2214,11 +2204,7 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
             } else {
 
                 if (card_BottomUser.size() > 0) {
-                    if (c.isQuickMode) {
-                        Collections.shuffle(card_BottomUser);
-                    } else {
-                        card_BottomUser = new ArrayList<>(SortMyCardbyColor(card_BottomUser));
-                    }
+                    card_BottomUser = new ArrayList<>(SortMyCardbyColor(card_BottomUser));
                     reDrawUserCards(card_BottomUser);
 //                    BottomUserToolTip.setVisibility(View.VISIBLE);
                 }
@@ -3123,11 +3109,7 @@ public class CallBreak_PlayingScreen extends ParentActivity implements View.OnCl
         binding.ivCardForDistribution.setVisibility(View.GONE);
 
         if (card_BottomUser.size() > 0) {
-            if (c.isQuickMode) {
-                Collections.shuffle(card_BottomUser);
-            } else {
-                card_BottomUser = new ArrayList<>(SortMyCardbyColor(card_BottomUser));
-            }
+            card_BottomUser = new ArrayList<>(SortMyCardbyColor(card_BottomUser));
             reDrawUserCards(card_BottomUser);
         }
     }

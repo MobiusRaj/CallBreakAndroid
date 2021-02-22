@@ -485,33 +485,6 @@ public class ConnectionManager {
         }
     }
 
-    // Login with facebook user
-    protected void LoginAsFacebookUser() {
-
-        JSONObject jObj = new JSONObject();
-
-        try {
-
-            if (PreferenceManager.get_id().length() > 0) {
-                jObj.put(Parameters.User_Id, PreferenceManager.get_id());
-            }
-
-            jObj.put(Parameters.User_Name, PreferenceManager.getUserName());
-            jObj.put(Parameters.User_LoginType, "FB");
-            jObj.put(Parameters.FB_Id, PreferenceManager.get_FbId());
-            jObj.put(Parameters.ReferrerCode, c.ReferrerCode);
-            jObj.put(Parameters.User_Email, PreferenceManager.getUserEmail());
-            jObj.put(Parameters.FB_Token, PreferenceManager.get_FB_accessToken());
-            jObj.put(Parameters.Permissions, new JSONArray());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-//        EmitManager.Process(jObj, Events.Signup_Process);
-
-    }
-
     private void GotEvent(String data) throws JSONException {
         JSONObject jObject = new JSONObject(data);
         String event = jObject.getString(Events.EventName);

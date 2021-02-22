@@ -106,17 +106,10 @@ public class JsonData {
             SignupData = new JSONObject(data);
             PreferenceManager.set_id(SignupData.getJSONObject(Parameters.data).getString(Parameters._id));
             PreferenceManager.setUserName(SignupData.getJSONObject(Parameters.data).getString(Parameters.User_Name));
-            PreferenceManager.setUserReward(String.valueOf(SignupData.getJSONObject(Parameters.data).getJSONObject("userRewardData").getInt("userRewardPoint")));
             PreferenceManager.setUserLevel(SignupData.getJSONObject(Parameters.data).getJSONObject("userLoyaltyData").getInt("per"));
 
             PreferenceManager.setUserLevelPoint(SignupData.getJSONObject(Parameters.data).getJSONObject("userLoyaltyData").getInt("currentLevel"));
-            Logger.print(TAG, "setSignUpData: ............ point :: " + PreferenceManager.getUserLevelPoint());
-            PreferenceManager.setUserEmail(SignupData.getJSONObject(Parameters.data).getString(Parameters.User_Email));
-//            PreferenceManager.set_FbId(SignupData.getJSONObject(Parameters.data).getString(Parameters.FB_Id));
-            PreferenceManager.set_FB_accessToken(SignupData.getJSONObject(Parameters.data).getString(Parameters.FB_Token));
             PreferenceManager.setUserState(SignupData.getJSONObject(Parameters.data).getString(Parameters.state));
-            PreferenceManager.set_UserLoginType(SignupData.getJSONObject(Parameters.data).optString(Parameters.User_LoginType));
-
 
             if (c.isNullOrEmpty(SignupData.getJSONObject(Parameters.data).optString(Parameters.Chips))) {
                 c.Chips = 0L;
@@ -139,21 +132,8 @@ public class JsonData {
                 c.initialBootValue = 10;
             }
 
-            if (SignupData.getJSONObject(Parameters.data).has(Parameters.ChallangeButton))
-                c.ChallangeOnOffFlag = SignupData.getJSONObject(Parameters.data).optInt(Parameters.ChallangeButton);
-
             if (SignupData.getJSONObject(Parameters.data).has(Parameters.FreeChip)) {
                 c.FreeChip = SignupData.getJSONObject(Parameters.data).optInt(Parameters.FreeChip);
-            }
-
-            if (c.ChallangeOnOffFlag == 0) {
-                PreferenceManager.setChallengePopup(false);
-            } else {
-                PreferenceManager.setChallengePopup(true);
-            }
-
-            if (SignupData.getJSONObject(Parameters.data).has(Parameters.ReferrerUid)) {
-                c.Unique_Id = SignupData.getJSONObject(Parameters.data).optString(Parameters.ReferrerUid);
             }
 
             if (SignupData.getJSONObject(Parameters.data).has(Parameters.ReferrerCode)) {
@@ -164,38 +144,12 @@ public class JsonData {
                 c.RFLink = SignupData.getJSONObject(Parameters.data).optString(Parameters.rfl);
             }
 
-            try {
-                if (SignupData.getJSONObject(Parameters.data).has(Parameters.IR_OFFER_PLAN)) {
-                    c.irOfferPlan = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.IR_OFFER_PLAN);
-                    if (c.irOfferPlan.length() > 0) {
-                        c.irOfferWebLink = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.IR_OFFER_PLAN).optString(Parameters.IR_OFFER_WEB_LINK);
-                        c.irOfferDBImage = c.REMOTE_ASSET_BASE_URL + SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.IR_OFFER_PLAN).optString(Parameters.IR_OFFER_DB_IMAGE);
-                    } else {
-                        c.irOfferPlan = new JSONObject();
-                        c.irOfferWebLink = "";
-                        c.irOfferDBImage = "";
-                    }
-                    Logger.print(TAG, "IR_OFFER_PLAN --> " + c.irOfferPlan + "\n" + "IR_OFFER_WEB_LINK --> " + c.irOfferWebLink + "\n" + "IR_OFFER_DB_IMAGE --> " + c.irOfferDBImage);
-
-                }
-            } catch (Exception e) {
-                c.irOfferPlan = new JSONObject();
-                c.irOfferWebLink = "";
-                c.irOfferDBImage = "";
-                Logger.print(TAG, "EXCEPTION --> IR_OFFER_PLAN --> " + c.irOfferPlan + "\n" + "IR_OFFER_WEB_LINK --> " + c.irOfferWebLink + "\n" + "IR_OFFER_DB_IMAGE --> " + c.irOfferDBImage);
-                e.printStackTrace();
-            }
-
             c.dscl = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.counters).optInt("dscl");
             c.dfhl = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.counters).optInt("dfhl");
 
 //            Logger.print(TAG, "SINGN UP CHIP>>>>>>>>" + Long.parseLong(SignupData.getJSONObject(Parameters.data).optString(Parameters.Chips)));
 
             c.Level = Integer.parseInt(SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.counters).optString(Parameters.LevelCompleted));
-
-            c.inviteFriendsCounter = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.counters).optInt(Parameters.inviteFriendCounter);
-
-            c.inviteFriendsTotalChips = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.counters).optInt(Parameters.inviteFriendTotalChips);
 
             c.ProgressPercentage = Integer.parseInt(SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.counters).optString(Parameters.ProgressPercentage));
 
@@ -213,9 +167,6 @@ public class JsonData {
             if (SignupData.getJSONObject(Parameters.data).has("adProb")) {
                 c.adProb = SignupData.getJSONObject(Parameters.data).optInt("adProb");
             }
-
-            if (SignupData.getJSONObject(Parameters.data).has(Parameters.DailyBonusFirstTime))
-                c.isShowDailyRewardScreen = SignupData.getJSONObject(Parameters.data).optBoolean(Parameters.DailyBonusFirstTime);
 
             /*if (SignupData.getJSONObject(Parameters.data).has(Parameters.rejoin)) {*/
             if (SignupData.getJSONObject(Parameters.data).has(Parameters.rejoin)) {
@@ -235,33 +186,8 @@ public class JsonData {
                 c.lcp = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.flags).optInt("LCP");
             }
 
-//            c.practicGameFlage = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.flags).optInt("sct") == 1;
-
-            if (SignupData.getJSONObject(Parameters.data).has(Parameters.NotificationBonusFlag)) {
-                c.isToShowDailyRewardsPopup = SignupData.getJSONObject(Parameters.data).optInt(Parameters.NotificationBonusFlag) == 1;
-                if (c.isToShowDailyRewardsPopup) {
-                    c.dailyRewardsAmount = SignupData.getJSONObject(Parameters.data).optLong(Parameters.NotificationBonusAmount);
-                    c.dailyRewardsMessage = SignupData.getJSONObject(Parameters.data).optString("notimsg");
-                }
-            }
-
             if (SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.flags).has("_fti")) {
                 c.isShowTutorial = SignupData.getJSONObject(Parameters.data).getJSONObject(Parameters.flags).optInt("_fti") == 0;
-            }
-
-            //}
-            c.dailyRewardNotification = SignupData.getJSONObject(Parameters.data).optString(Parameters.CreatedDate);
-
-            String lastFBPost = SignupData.getJSONObject(Parameters.data).getJSONObject("lasts").optString(Parameters.LastFBPosted);
-            if (lastFBPost.length() > 0) {
-                if (PreferenceManager.getlastFacebookPost().contentEquals(lastFBPost)) {
-                    c.isFBPostEnable = false;
-                } else {
-                    PreferenceManager.setlastFacebookPost(lastFBPost);
-                    c.isFBPostEnable = true;
-                }
-            } else {
-                c.isFBPostEnable = true;
             }
 
             String lastLoginDate = SignupData.getJSONObject(Parameters.data).getJSONObject("lasts").getString(Parameters.LastLogin);
@@ -309,21 +235,6 @@ public class JsonData {
 
         c.DBVersion = jObject1.getJSONObject(Parameters.data).getInt(Parameters.TGDC);
 
-        c.GET_JUSPAY_CLIENT_AUTH_TOKEN = jObject1.getJSONObject(Parameters.data).has("JUS_PAY_KEY") ?
-                jObject1.getJSONObject(Parameters.data).getString("JUS_PAY_KEY") : "";
-
-        C.VIDEO_BONUS = jObject1.getJSONObject(Parameters.data).getInt(Parameters.VIDEO_BONUS);
-        C.ADSPER = jObject1.getJSONObject(Parameters.data).getInt(Parameters.ADSPER);
-
-        PreferenceManager.APP_ID = jObject1.getJSONObject(Parameters.data).getString(Parameters.FB_APP_ID);
-
-        PreferenceManager.APP_NAMESPACE = jObject1.getJSONObject(Parameters.data).getString(Parameters.FB_APP_NAME);
-
-        c.APP_PAGELINK = jObject1.getJSONObject(Parameters.data).getString(Parameters.FB_APP_PAGELINK);
-
-        if (jObject1.getJSONObject(Parameters.data).has(Parameters.WatchVideoFound))
-            c.isWatchVideoAvailable = jObject1.getJSONObject(Parameters.data).getBoolean(Parameters.WatchVideoFound);
-
         c.IFBC = jObject1.getJSONObject(Parameters.data).getLong(Parameters.INITIAL_FACEBOOK_CHIPS);
 
         c.SENDER_ID1 = jObject1.getJSONObject(Parameters.data).getString(Parameters.ANDROID_PROJECT_ID);
@@ -341,9 +252,6 @@ public class JsonData {
         c.FORCEFULLYDOWNLOAD = jObject1.getJSONObject(Parameters.data).getBoolean(Parameters.AFDNV);
 
         c.VERSIONCODE = jObject1.getJSONObject(Parameters.data).getString(Parameters.AV);
-
-        if (jObject1.getJSONObject(Parameters.data).has(Parameters.CBRWD))
-            c.WATCH_VIDEO_REWARD = jObject1.getJSONObject(Parameters.data).getLong(Parameters.CBRWD);
 
         c.WEEKLY_WINNER_REWARD1 = jObject1.getJSONObject(Parameters.data).getInt(Parameters.WW1R);
         c.WEEKLY_WINNER_REWARD2 = jObject1.getJSONObject(Parameters.data).getInt(Parameters.WW2R);
@@ -365,8 +273,6 @@ public class JsonData {
 
         c.ROUND_START_TIMER = jObject1.getJSONObject(Parameters.data).getInt(Parameters.ROUND_START_TIMER);
 
-        c.shareButoonFlowType = jObject1.getJSONObject(Parameters.data).optInt(Parameters.shareButoonFlowType, 0);
-
         c.DEAL_CARD_ANIMATION_TIME = jObject1.getJSONObject(Parameters.data).getInt(Parameters.DEAL_CARD_ANIMATION_TIME);
 
         c.COLLECT_BOOT_VALUE_TIME = jObject1.getJSONObject(Parameters.data).getInt(Parameters.COLLECT_BOOT_VALUE_TIME);
@@ -376,10 +282,6 @@ public class JsonData {
         c.REMOTE_ASSET_BASE_URL = jObject1.getJSONObject(Parameters.data).getString(Parameters.REMOTE_ASSET_BASE_URL).replace("https", "http");
 
         c.BASE_URL = jObject1.getJSONObject(Parameters.data).getString(Parameters.BASE_URL);
-
-        if (jObject1.getJSONObject(Parameters.data).has("JUS_PAY_RETURN_URL")) {
-            PreferenceManager.setUserReturnUrl(jObject1.getJSONObject(Parameters.data).getString("JUS_PAY_RETURN_URL"));
-        }
 
         c.TFR = jObject1.getJSONObject(Parameters.data).getString(Parameters.TFR);
         c.TPR = jObject1.getJSONObject(Parameters.data).getString(Parameters.TPR);
@@ -480,7 +382,6 @@ public class JsonData {
         c.WBMGIM1 = jObject1.getJSONObject(Parameters.data).getString("WBMGIM1");
 
         c.OFSB = jObject1.getJSONObject(Parameters.data).getInt("OFSB") == 1;
-        C.SPECIAL_OFFER = jObject1.getJSONObject(Parameters.data).getInt("SPECIAL_OFFER") == 1;
         c.BVRS = jObject1.getJSONObject(Parameters.data).getInt("BVRS");
         c.MBVR = jObject1.getJSONObject(Parameters.data).getInt("MBVR");
 
@@ -499,15 +400,5 @@ public class JsonData {
         if (jObject1.getJSONObject(Parameters.data).has("ISPOOLBTN")) {
             c.isPoolModeEnable = jObject1.getJSONObject(Parameters.data).getBoolean("ISPOOLBTN");
         }
-        if (jObject1.getJSONObject(Parameters.data).has("SPECIAL_OFFER_DISPLAY")) {
-            C.CHIP_STORE = jObject1.getJSONObject(Parameters.data).getJSONObject("SPECIAL_OFFER_DISPLAY").optInt("chipstore") == 1;
-            C.COIN_STORE = jObject1.getJSONObject(Parameters.data).getJSONObject("SPECIAL_OFFER_DISPLAY").optInt("coinstore") == 1;
-            C.ONGAME_LOAD = jObject1.getJSONObject(Parameters.data).getJSONObject("SPECIAL_OFFER_DISPLAY").optInt("ongameload") == 1;
-        }
-
-        if (jObject1.getJSONObject(Parameters.data).has("PRIVAE_TABLE_COST")) {
-            C.PRIVAE_TABLE_COST = jObject1.getJSONObject(Parameters.data).optLong("PRIVAE_TABLE_COST");
-        }
-
     }
 }

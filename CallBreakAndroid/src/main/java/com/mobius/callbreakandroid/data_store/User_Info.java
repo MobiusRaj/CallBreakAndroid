@@ -25,9 +25,6 @@ public class User_Info {
             setUserName(data.getString(Parameters.User_Name));
             setChips(data.getLong(Parameters.Chips));
             c.RefernceInvited = data.getJSONObject(Parameters.counters).optInt(Parameters.rifc);
-            if (data.has(Parameters.rfl)) {
-                PreferenceManager.set_ReferenceLink(data.getString(Parameters.rfl));
-            }
 //            setFlagFacebookLike((data.getJSONObject(Parameters.flags).getString(Parameters.FlagFacebookLike).equals("1")));
             setFlagIsRated((data.getJSONObject(Parameters.flags).getString(Parameters.FlagRate).equals("1")));
             set_id(data.getString(Parameters._id));

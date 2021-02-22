@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,8 +61,9 @@ import retrofit2.Retrofit;
 
 public class Activity_CallBreakList extends ParentActivity implements CashGameButtonListner {
 
+    //JR code
     private static final String TAG = "Activity_CallBreak";
-    private String userName, userState, IntentData;
+    private String userName, userState, unique_id, IntentData;
     private boolean isForStageConnect = true;
     private ImageView clsNotification, whatsAppReferEarn;
     private TextView wallet_amount, txtNotificatoion, whatsAppReferEarnTxt;
@@ -84,10 +86,15 @@ public class Activity_CallBreakList extends ParentActivity implements CashGameBu
         c.conn.activity = this;
         loader = new GlobalLoader_new(Activity_CallBreakList.this);
         GlobalLoaderSHOW(getResources().getString(R.string.PleaseWait));
+        Log.e("Activity_CallBreakList"," userName -> "+getIntent().getStringExtra("userName"));
+        Log.e("Activity_CallBreakList"," userState -> "+getIntent().getStringExtra("userState"));
+        Log.e("Activity_CallBreakList"," userMobileNumber -> "+getIntent().getStringExtra("userMobileNumber"));
         isForStageConnect = getIntent().getBooleanExtra("isForStageConnect", true);
         userName = getIntent().getStringExtra("userName");
         userState = getIntent().getStringExtra("userState");
-//        PreferenceManager.setUserMobileNo(getIntent().getStringExtra("userMobileNumber"));
+        unique_id = getIntent().getStringExtra("unique_id");
+        PreferenceManager.setUserState(userState);
+        PreferenceManager.setUserMobileNo(getIntent().getStringExtra("userMobileNumber"));
 //        setUserRegistrationId();
         setDisplayMetrics();
         if (PreferenceManager.getUniqueId().length() <= 0) {
@@ -316,12 +323,10 @@ public class Activity_CallBreakList extends ParentActivity implements CashGameBu
             jObj.put(Parameters.Device_Type, "android");
             jObj.put(Parameters.ReferrerCode, "");
 //            jObj.put(Parameters.Device_Id, PreferenceManager.getRegistrationId());
-//            jObj.put(Parameters.un, userName);
-            jObj.put(Parameters.un, "userName");
-//            jObj.put(Parameters.mobileNumber, PreferenceManager.getUserMobileNo());
-            jObj.put(Parameters.mobileNumber, "0000075368");
-//            jObj.put(Parameters.state, userState);
-            jObj.put(Parameters.state, "Sikkim");
+            jObj.put(Parameters.un, userName);
+            jObj.put(Parameters.mobileNumber, PreferenceManager.getUserMobileNo());
+            jObj.put(Parameters.state, userState);
+            jObj.put(Parameters.unique_id, unique_id);
             EmitManager.Process(jObj, Events.Signup_Process);
             GlobalLoaderSHOW(getResources().getString(R.string.PleaseWait));
         } catch (JSONException e) {
@@ -371,25 +376,6 @@ public class Activity_CallBreakList extends ParentActivity implements CashGameBu
         if (c.conn.isDoubleLogin) {
             EXIT = true;
             c.conn.isDoubleLogin = false;
-        }
-
-        if (EXIT && PreferenceManager.get_FbId().length() > 0) {
-            Logger.print(TAG, "SSSSSSSSSSSSSSSSS 2");
-            finishLoaderTimer();
-            if (!PING_ERROR) {
-                EXIT = false;
-                Intent i = new Intent(Activity_CallBreakList.this, Activity_CallBreakList.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.putExtra("showSwitchDialog", true);
-                startActivity(i);
-                PreferenceManager.setIsUserAlreadyLogin(false);
-                PreferenceManager.setUserMobileNo("");
-                PreferenceManager.set_id("");
-                finish();
-            } else {
-                new ServerError(Activity_CallBreakList.this,
-                        "It seems that connection to server have been Lost. Please reconnect!");
-            }
         }
     }
 
