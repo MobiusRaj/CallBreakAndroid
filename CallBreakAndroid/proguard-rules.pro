@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn android.databinding.**
+-keep class android.databinding.** { *; }
+-keep class com.mobius.CallBreakAndroid.DataBinderMapperImpl { *; }
